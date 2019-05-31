@@ -1,0 +1,40 @@
+.content {
+  margin-top: 3em;
+  display: grid;
+  grid-gap: 3em;
+  grid-template-columns: 1fr 300px 300px 1fr;
+  grid-template-rows: 1fr;
+}
+.avatar {
+  margin-right: 0.5em;
+  color: #ccc;
+  font-size: 24px;
+}
+h2 {
+  display: flex;
+}
+.all-width {
+  width: 100%;
+}
+.lista {
+  padding: 0;
+}
+.alumno-list-item {
+  border-bottom: 1px solid #ddd;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+.alumno-list-item:hover {
+  background-color: #eee;
+}
+.alumno-list-item p {
+  padding-left: 2.5em;
+}
+mat-list {
+  padding-top: 0px;
+}
+.alumno-seleccionado {
+  background-color: rgb(63, 81, 181) !important;
+  color: #fff;
+  font-weight: bold;
+}

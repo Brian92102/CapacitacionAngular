@@ -1,0 +1,18 @@
+<mat-card class="lista">
+  <mat-list>
+    <mat-list-item
+      *ngFor="let alumno of alumnos"
+      class="alumno-list-item"
+      (click)="AlumnoSelect(alumno)"
+      [class.alumno-seleccionado]="EstaSeleccionado(alumno)"
+    >
+      <div mat-line>
+        <h2>
+          <mat-icon class="avatar">account_circle</mat-icon>
+          {{ alumno.nombre }} {{ alumno.apellido }}
+        </h2>
+      </div>
+      <p mat-line>Perfil: {{ Perfiles(alumno.perfil) }}<br /><br /></p>
+    </mat-list-item>
+  </mat-list>
+</mat-card>

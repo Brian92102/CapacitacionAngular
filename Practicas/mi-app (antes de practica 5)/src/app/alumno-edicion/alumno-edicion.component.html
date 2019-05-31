@@ -1,0 +1,22 @@
+<mat-card *ngIf="alumnoSeleccionado">
+  <h2>Alumno Seleccionado</h2>
+  <mat-form-field class="all-width">
+    <input
+      matInput
+      name="nombre"
+      placeholder="Nombre"
+      [(ngModel)]="alumnoSeleccionado.nombre"
+    />
+  </mat-form-field>
+  <mat-form-field class="all-width">
+    <input
+      matInput
+      name=" apellido"
+      placeholder="Apellido"
+      [(ngModel)]="alumnoSeleccionado.apellido"
+    />
+  </mat-form-field>
+  Sexo: {{ Sexos(alumnoSeleccionado.sexo) }} <br />
+  Perfil: {{ Perfiles(alumnoSeleccionado.perfil) }} <br />
+  Activo: {{ alumnoSeleccionado.activo }}
+</mat-card>

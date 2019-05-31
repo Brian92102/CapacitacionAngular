@@ -1,0 +1,47 @@
+<mat-toolbar color="primary" class="mat-elevation-z3">
+  <span>Gestión de cursos y alumnos</span>
+</mat-toolbar>
+<div class="content">
+  <div></div>
+  <mat-card class="lista">
+    <mat-list>
+      <mat-list-item
+        *ngFor="let alumno of alumnos"
+        class="alumno-list-item"
+        (click)="AlumnoSelect(alumno)"
+        [class.alumno-seleccionado]="EstaSeleccioando(alumno)"
+      >
+        <div mat-line>
+          <h2>
+            <mat-icon class="avatar">account_circle</mat-icon>
+            {{ alumno.nombre }} {{ alumno.apellido }}
+          </h2>
+        </div>
+        <p mat-line>Perfil: {{ Perfiles(alumno.perfil) }}<br /><br /></p>
+      </mat-list-item>
+    </mat-list>
+  </mat-card>
+  <mat-card *ngIf="alumnoSeleccionado">
+    <h2>Alumno Seleccionado</h2>
+    <mat-form-field class="all-width">
+      <input
+        matInput
+        name="nombre"
+        placeholder="Nombre"
+        [(ngModel)]="alumnoSeleccionado.nombre"
+      />
+    </mat-form-field>
+    <mat-form-field class="all-width">
+      <input
+        matInput
+        name=" apellido"
+        placeholder="Apellido"
+        [(ngModel)]="alumnoSeleccionado.apellido"
+      />
+    </mat-form-field>
+    Sexo: {{ Sexos(alumnoSeleccionado.sexo) }} <br />
+    Perfil: {{ Perfiles(alumnoSeleccionado.perfil) }} <br />
+    Activo: {{ alumnoSeleccionado.activo }}
+  </mat-card>
+  <div></div>
+</div>
