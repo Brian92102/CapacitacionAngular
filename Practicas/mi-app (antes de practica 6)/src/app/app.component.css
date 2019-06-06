@@ -1,0 +1,10 @@
+.content {
+  margin-top: 3em;
+  display: grid;
+  grid-gap: 3em;
+  grid-template-columns: 1fr 300px 300px 1fr;
+  grid-template-rows: 1fr;
+}
+.all-width {
+  width: 100%;
+}

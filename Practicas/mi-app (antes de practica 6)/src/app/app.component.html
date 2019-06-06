@@ -1,0 +1,11 @@
+<mat-toolbar color="primary" class="mat-elevation-z3">
+  <span>Gestión de cursos y alumnos</span>
+</mat-toolbar>
+<div class="content">
+  <div></div>
+  <app-alumnos-lista [alumnos]="alumnos" [alumnoSeleccionado]="alumnoSeleccionado" (Seleccion)="Seleccionar($event)">
+  </app-alumnos-lista>
+  <app-alumno-edicion [alumnoSeleccionado]="alumnoSeleccionado" (finEdicion)="FinEdicion()">
+  </app-alumno-edicion>
+  <div></div>
+</div>

@@ -1,0 +1,71 @@
+<mat-card *ngIf="alumnoSeleccionado">
+  <h2>Alumno Seleccionado</h2>
+  <form novalidate #f="ngForm">
+    <mat-form-field class="all-width">
+      <input
+        matInput
+        required
+        name="nombre"
+        placeholder="Nombre"
+        [ngModel]="alumnoSeleccionado.nombre"
+        #nombre="ngModel"
+      />
+      <mat-error *ngIf="nombre.invalid">Debe ingresar el nombre </mat-error>
+    </mat-form-field>
+    <mat-form-field class="all-width">
+      <input
+        matInput
+        required
+        name="apellido"
+        placeholder="Apellido"
+        [ngModel]="alumnoSeleccionado.apellido"
+        #apellido="ngModel"
+      />
+      <mat-error *ngIf="apellido.invalid">Debe ingresar el apellido </mat-error>
+    </mat-form-field>
+    Sexo
+    <mat-radio-group [ngModel]="alumnoSeleccionado.sexo" name="sexo">
+      <mat-radio-button
+        class="all-width"
+        *ngFor="let sexo of sexos"
+        [value]="sexo.index"
+      >
+        {{ sexo.descripcion }}<br />
+      </mat-radio-button>
+    </mat-radio-group>
+
+    <br /><br />
+    <mat-form-field class="all-width">
+      <mat-select
+        placeholder="Perfil"
+        [ngModel]="alumnoSeleccionado.perfil"
+        name="perfil"
+      >
+        <mat-option *ngFor="let perfil of perfiles" [value]="perfil.index">
+          {{ perfil.descripcion }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br /><br />
+    <mat-checkbox [ngModel]="alumnoSeleccionado.activo" name="activo">
+      Activo
+    </mat-checkbox>
+    <br /><br />
+    <mat-card-actions>
+      <button mat-button (click)="Regresar()">
+        Cancelar
+      </button>
+      <button
+        mat-button
+        color="primary"
+        [disabled]="f.invalid"
+        (click)="Guardar(f.value)"
+      >
+        Aceptar
+      </button>
+    </mat-card-actions>
+  </form>
+  <br /><br />
+  {{ f.value | json }}<br /><br />
+  {{ alumnoSeleccionado | json }}
+</mat-card>

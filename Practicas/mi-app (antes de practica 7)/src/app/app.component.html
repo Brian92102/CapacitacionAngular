@@ -1,0 +1,20 @@
+<mat-toolbar color="primary" class="mat-elevation-z3">
+  <span>Gestión de cursos y alumnos</span>
+</mat-toolbar>
+<div class="content">
+  <div></div>
+  <app-alumnos-lista
+    [alumnos]="alumnos"
+    [alumnoSeleccionado]="alumnoSeleccionado"
+    (Seleccion)="Seleccionar($event)"
+    (FiltrarAlumnos)="FiltrarAlumnos($event)"
+    (AgregarAlumno)="AgregarAlumno()"
+  >
+  </app-alumnos-lista>
+  <app-alumno-edicion
+    [alumnoSeleccionado]="alumnoSeleccionado"
+    (FinDeEdicion)="ActualizarAlumno($event)"
+  >
+  </app-alumno-edicion>
+  <div></div>
+</div>
