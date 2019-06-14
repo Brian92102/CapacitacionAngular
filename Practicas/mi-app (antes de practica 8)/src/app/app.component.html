@@ -1,0 +1,26 @@
+<mat-toolbar color="primary" class="mat-elevation-z3">
+  <span>Gestión de cursos y alumnos</span>
+</mat-toolbar>
+
+<div class="content">
+  <div class="menu">
+    <a routerLink="/alumnos" routerLinkActive="activo">
+      <i class="material-icons">people</i><br />
+      Alumnos
+    </a>
+
+    <a routerLink="/cursos" routerLinkActive="activo">
+      <i class="material-icons">event</i><br />
+      Cursos
+    </a>
+
+    <a routerLink="/asistencias" routerLinkActive="activo">
+      <i class="material-icons">assignment_turned_in</i><br />
+      Asistencias
+    </a>
+  </div>
+
+  <div class="contenido">
+    <router-outlet></router-outlet>
+  </div>
+</div>
