@@ -1,0 +1,10 @@
+Para utilizar npm dentro de la red de Indra, debemos configurar a npm para que acceda a traves del proxy, esto se realiza de la siguiente manera (donde dice UsuarioIndra, poner el usuario de red y a continuación de los 2 puntos la contraseña del usuario):
+npm config set http-proxy http://usuarioIndra:password@proxylatam.indra.es:8080
+npm config set https-proxy http://usuarioIndra:password@proxylatam.indra.es:8080
+
+Con el siguiente comando se pueden consultar las configuraciones actuales de npm:
+npm config list
+
+Para utilizar npm fuera de la red de Indra despues de haber configurado el proxy, se debe eliminar esa configuración, con los siguientes comandos:
+npm config delete http-proxy
+npm config delete https-proxy
